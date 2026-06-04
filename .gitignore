@@ -1,0 +1,17 @@
+# Build artifacts
+/itonics
+/bin/
+/dist/
+*.exe
+*.test
+*.out
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Secrets
+.env
+.env.*
+!.env.example
