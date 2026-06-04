@@ -1,0 +1,15 @@
+{
+    "version": "0.1.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/itonics/itonics-cli/releases/download/v0.1.0/itonics_0.1.0_Windows_x86_64.zip",
+            "bin": [
+                "itonics.exe"
+            ],
+            "hash": "9d54e34b28a943e31bc74303564a713596dcb187cba505d42d90c9fd8afdf64d"
+        }
+    },
+    "homepage": "https://github.com/itonics/itonics-cli",
+    "license": "MIT",
+    "description": "Command-line client for the ITONICS Innovation OData v2 API"
+}
