@@ -40,7 +40,6 @@ type UpdateElementInput struct {
 // ListElementsParams collects $-prefixed OData params plus rawFieldValues.
 type ListElementsParams struct {
 	Filter         string
-	Search         string
 	Select         string
 	OrderBy        string
 	Top            int
@@ -51,9 +50,6 @@ func (p ListElementsParams) values() url.Values {
 	v := url.Values{}
 	if p.Filter != "" {
 		v.Set("$filter", p.Filter)
-	}
-	if p.Search != "" {
-		v.Set("$search", p.Search)
 	}
 	if p.Select != "" {
 		v.Set("$select", p.Select)

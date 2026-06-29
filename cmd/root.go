@@ -24,7 +24,7 @@ var flagConfig string
 var rootCmd = &cobra.Command{
 	Use:           "itonics",
 	Short:         "Command-line client for the ITONICS Innovation OData v2 API",
-	Long:          "Manage elements, element types, files, attachments, watches and likes on an ITONICS Innovation tenant.",
+	Long:          "Manage elements, element types, files, attachments, watches, likes, comments and views on an ITONICS Innovation tenant.",
 	SilenceUsage:  true,
 	SilenceErrors: true,
 	Version:       Version,
