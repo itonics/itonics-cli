@@ -23,9 +23,9 @@ func init() {
 
 func elementsListCmd() *cobra.Command {
 	var (
-		filter, search, selectFields, orderBy string
-		top                                   int
-		raw                                   bool
+		filter, selectFields, orderBy string
+		top                           int
+		raw                           bool
 	)
 	c := &cobra.Command{
 		Use:   "list",
@@ -36,7 +36,7 @@ func elementsListCmd() *cobra.Command {
 				return err
 			}
 			items, err := c.ListElements(ctx(), api.ListElementsParams{
-				Filter: filter, Search: search, Select: selectFields,
+				Filter: filter, Select: selectFields,
 				OrderBy: orderBy, Top: top, RawFieldValues: raw,
 			})
 			if err != nil {
@@ -45,8 +45,7 @@ func elementsListCmd() *cobra.Command {
 			return renderCmd(cmd, map[string]any{"elements": items})
 		},
 	}
-	c.Flags().StringVarP(&filter, "filter", "f", "", "OData $filter expression")
-	c.Flags().StringVarP(&search, "search", "s", "", "Full-text $search")
+	c.Flags().StringVarP(&filter, "filter", "f", "", "OData $filter, e.g. \"contains(label,'x')\" (no full-text $search)")
 	c.Flags().StringVar(&selectFields, "select", "", "Comma-separated fields to select")
 	c.Flags().StringVar(&orderBy, "orderby", "", "OData $orderby expression")
 	c.Flags().IntVarP(&top, "top", "n", 0, "Maximum number of items (fetches across pages)")

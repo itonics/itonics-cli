@@ -84,7 +84,7 @@ See [`.env.example`](.env.example) if you prefer the env-var path.
 | Log out | `itonics logout` |
 | List elements | `itonics elements list -n 20 --format table` |
 | Filter by type | `itonics elements list -f "elementTypeUri eq 'XXX'"` |
-| Full-text search | `itonics elements list -s "keyword"` |
+| Filter by text | `itonics elements list -f "contains(label,'budget')"` (no full-text `$search`) |
 | Get one element | `itonics elements get URI --raw` |
 | Create | `itonics elements create --type URI --label LBL --created-by EMAIL` |
 | Update | `itonics elements update URI --updated-by EMAIL --label "New"` |
@@ -98,6 +98,12 @@ See [`.env.example`](.env.example) if you prefer the env-var path.
 | List watches | `itonics watches list ELEMENT_URI` |
 | Add watch | `itonics watches add ELEMENT_URI USER_URI` |
 | List likes | `itonics likes list ELEMENT_URI --orderby "likedOn desc"` |
+| List comments | `itonics comments list ELEMENT_URI` |
+| Add comment | `itonics comments create ELEMENT_URI --commented-by EMAIL --text "Hi @bob@acme.com, see #{Idea X}"` |
+| Edit comment | `itonics comments update ELEMENT_URI COMMENT_URI --updated-by EMAIL --text "…"` |
+| Delete comment | `itonics comments delete ELEMENT_URI COMMENT_URI --yes` |
+| List views | `itonics views list --format table` |
+| Create page view | `itonics views create --label "Dashboard" --created-by EMAIL --html "<div class='p-4'>…</div>"` |
 | List element types | `itonics types list --format table` |
 
 Run `itonics --help` or `itonics <group> --help` for the full surface.
